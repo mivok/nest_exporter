@@ -91,7 +91,7 @@ func main() {
 	}
 	client := nest.New(config.ClientID, "STATE", config.ClientSecret, "")
 	client.Token = config.Token
-	ticker := time.NewTicker(10 * time.Second)
+	ticker := time.NewTicker(60 * time.Second)
 	go func() {
 		for {
 			devices, err := client.Devices()
