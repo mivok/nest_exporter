@@ -7,6 +7,7 @@ RUN go install -v
 
 FROM alpine:latest
 EXPOSE 9264
+RUN apk update; apk add ca-certificates
 COPY --from=builder /go/bin/nest_exporter /usr/local/bin/
 USER nobody
 ENTRYPOINT ["/usr/local/bin/nest_exporter"]
