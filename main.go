@@ -183,8 +183,8 @@ func main() {
 		log.Fatal(err)
 	}
 	if config.RefreshInterval == 0 {
-		// Default to 1 minute refreshes
-		config.RefreshInterval = 60
+		// Default to 2 minute refreshes
+		config.RefreshInterval = 120
 	}
 	ticker := time.NewTicker(time.Duration(config.RefreshInterval) *
 		time.Second)
