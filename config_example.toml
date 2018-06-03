@@ -1,6 +1,3 @@
-# Put the client ID and secret here from the application created at
-# developers.nest.com
-client_id = ""
-client_secret = ""
 # Put the auth token you get from running get_token.sh here
 token = ""
+refresh_interval = 60
