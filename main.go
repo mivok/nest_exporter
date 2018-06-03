@@ -153,13 +153,13 @@ func getDevices(token string) (*Devices, error) {
 		url = "https://developer-api.nest.com/devices.json/?auth=" + token
 	}
 	resp, err := http.Get(url)
+	if err != nil {
+		return nil, err
+	}
 	respURL := resp.Request.URL.String()
 	if respURL != url {
 		// We were redirected, so cache the new URL
 		CachedRedirectURL = respURL
-	}
-	if err != nil {
-		return nil, err
 	}
 	defer resp.Body.Close()
 	body, err := ioutil.ReadAll(resp.Body)
